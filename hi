@@ -1,1 +1,190 @@
-
+{
+  "palette": {
+    "primary": "#3B82F6",
+    "secondary": "#10B981",
+    "accent": "#F59E0B",
+    "danger": "#EF4444",
+    "background": "#0A0A0A",
+    "surface": "#1A1A1A",
+    "surface_elevated": "#262626",
+    "border": "#333333",
+    "text_primary": "#FFFFFF",
+    "text_secondary": "#A3A3A3",
+    "text_muted": "#737373",
+    "success": "#10B981",
+    "warning": "#F59E0B",
+    "info": "#3B82F6"
+  },
+  "typography": {
+    "heading_font": "Inter",
+    "body_font": "Inter",
+    "mono_font": "JetBrains Mono",
+    "heading_weights": [600, 700],
+    "body_weights": [400, 500, 600],
+    "scale": {
+      "h1": "32px",
+      "h2": "24px",
+      "h3": "20px",
+      "h4": "18px",
+      "body": "14px",
+      "small": "12px",
+      "code": "13px"
+    },
+    "line_height": {
+      "tight": "1.25",
+      "normal": "1.5",
+      "relaxed": "1.6"
+    }
+  },
+  "screen_descriptions": [
+    {
+      "name": "Dashboard",
+      "layout": "Sidebar navigation (240px) with main content area. Top bar contains user profile, notifications, and quick actions. Main area uses a 12-column grid with 24px gaps.",
+      "components": [
+        "Stats cards (4-column grid): Active Sessions, Total Scans, Vulnerabilities Found, Learning Progress",
+        "Recent Activity feed (8 columns): Timeline of recent scans, findings, and session activity with timestamps",
+        "Quick Actions panel (4 columns): Start New Scan, Browse Targets, View Reports, Join Class buttons",
+        "Active Sessions table: Collapsible rows showing session name, target, status, progress bar, and action menu",
+        "Learning Path widget: Progress visualization with completed/upcoming modules"
+      ],
+      "interactions": [
+        "Stat cards animate count-up on load",
+        "Hover on activity items reveals quick preview tooltip",
+        "Session rows expand to show detailed metrics and logs",
+        "Quick action buttons have subtle scale and glow on hover",
+        "Real-time status updates with pulse animation for active scans"
+      ]
+    },
+    {
+      "name": "Target Library",
+      "layout": "Full-width layout with filter sidebar (280px) and card grid. Search bar spans top. Cards use 3-column responsive grid (1 col mobile, 2 col tablet, 3 col desktop).",
+      "components": [
+        "Search bar with autocomplete and advanced filters toggle",
+        "Filter sidebar: Difficulty level, vulnerability types, OWASP categories, technology stack checkboxes",
+        "Target cards: Thumbnail, title, difficulty badge, tech stack tags, vulnerability count, description preview, 'Launch' CTA",
+        "Sort dropdown: By difficulty, popularity, recently added, alphabetical",
+        "Pagination or infinite scroll controls",
+        "Target detail modal: Full description, learning objectives, vulnerability list, environment specs, prerequisites"
+      ],
+      "interactions": [
+        "Cards lift with shadow on hover, 'Launch' button slides in from bottom",
+        "Filter selections update results with fade transition",
+        "Difficulty badges color-coded (green=easy, yellow=medium, orange=hard, red=expert)",
+        "Tag chips are clickable to filter by that technology",
+        "Modal opens with slide-up animation, backdrop blur",
+        "Skeleton loaders during search/filter operations"
+      ]
+    },
+    {
+      "name": "Session (Sandbox) Page",
+      "layout": "Split-pane layout: Left pane (40%) shows target environment/browser preview, right pane (60%) contains tabbed interface for tools. Resizable divider between panes.",
+      "components": [
+        "Target preview pane: Embedded iframe or VNC viewer showing vulnerable application",
+        "Session header: Target name, timer, session controls (pause/resume/end), save progress button",
+        "Tool tabs: Scanner, Console, Notes, Hints, Documentation",
+        "Scanner tab: Configuration panel, scan controls, real-time results stream",
+        "Notes tab: Rich text editor with markdown support, auto-save indicator",
+        "Hints tab: Progressive hint system with 'reveal next hint' button, point deduction warning",
+        "Status bar: Connection status, resource usage, session time remaining"
+      ],
+      "interactions": [
+        "Pane divider has hover highlight and smooth drag resize",
+        "Tab switching with slide animation",
+        "Scanner results stream in with fade-in animation",
+        "Hint reveal has confirmation dialog, revealed hints expand with accordion animation",
+        "Auto-save indicator pulses briefly when notes are saved",
+        "Session timer changes color as time runs low (green→yellow→red)",
+        "Pause overlay dims the interface with frosted glass effect"
+      ]
+    },
+    {
+      "name": "Scan Console",
+      "layout": "Terminal-style interface with command input at bottom, output log above. Side panel (320px) shows scan configuration and results summary.",
+      "components": [
+        "Command input: Terminal-style prompt with autocomplete dropdown, command history (up/down arrows)",
+        "Output log: Monospace text with syntax highlighting, severity color coding, collapsible sections",
+        "Configuration panel: Target URL, scan type selector, options checkboxes, scan depth slider, thread count",
+        "Results summary: Vulnerability count by severity (critical/high/medium/low/info) with color-coded badges",
+        "Progress indicator: Percentage complete, requests sent, time elapsed, estimated time remaining",
+        "Export controls: Download as JSON/CSV/PDF, share link, save to workspace",
+        "Command palette: Keyboard shortcut overlay (Cmd/Ctrl+K)"
+      ],
+      "interactions": [
+        "Command autocomplete appears on typing with fuzzy search",
+        "Output log auto-scrolls to bottom, scroll-to-top button appears when scrolled up",
+        "Vulnerability entries are clickable to expand details inline",
+        "Severity badges pulse briefly when new findings appear",
+        "Progress bar fills with gradient animation",
+        "Export button shows dropdown menu with slide-down animation",
+        "Command history navigable with arrow keys, shows preview tooltip",
+        "Syntax highlighting updates in real-time as commands are typed"
+      ]
+    },
+    {
+      "name": "Findings Viewer",
+      "layout": "Master-detail layout: Left sidebar (360px) lists findings, right pane shows selected finding details. Top bar has filters and search.",
+      "components": [
+        "Findings list: Grouped by severity, each item shows title, severity badge, CVSS score, affected component",
+        "Filter bar: Severity toggles, status filters (new/reviewed/false-positive), search input",
+        "Detail pane header: Vulnerability title, severity badge, CVSS score breakdown, CWE/CVE links",
+        "Detail sections: Description, impact analysis, affected code snippet with line numbers, reproduction steps, remediation guidance, references",
+        "Code viewer: Syntax-highlighted vulnerable code with line highlighting, copy button",
+        "Action buttons: Mark as reviewed, flag as false positive, export finding, add to report",
+        "Related findings: Carousel of similar vulnerabilities found in this scan",
+        "Timeline: Discovery time, review history, status changes"
+      ],
+      "interactions": [
+        "Findings list items highlight on hover, selected item has accent border",
+        "Severity filters toggle with checkbox animation, update count badges",
+        "Detail pane slides in from right when finding is selected",
+        "Code snippets have copy-to-clipboard with success toast notification",
+        "Expandable sections use smooth accordion animation",
+        "CVSS score breakdown shows tooltip on hover with detailed metrics",
+        "Status change buttons show confirmation dialog, update with success animation",
+        "Related findings carousel has smooth horizontal scroll with navigation arrows"
+      ]
+    },
+    {
+      "name": "Instructor Class Management",
+      "layout": "Dashboard layout with top navigation tabs (Classes, Students, Assignments, Analytics). Main content area adapts per tab.",
+      "components": [
+        "Classes tab: Grid of class cards showing name, student count, active assignments, recent activity",
+        "Class detail view: Student roster table, assignment list, class settings, invite link generator",
+        "Students tab: Searchable table with columns: name, email, progress %, last active, actions menu",
+        "Student detail modal: Progress dashboard, completed assignments, time spent, vulnerability findings, skill assessment",
+        "Assignments tab: List view with create button, each assignment shows target, due date, completion rate, average score",
+        "Assignment builder: Target selector, time limit, hint settings, grading criteria, due date picker",
+        "Analytics tab: Class performance charts (completion rates, average scores, time spent), vulnerability discovery heatmap, student progress comparison",
+        "Bulk actions toolbar: Appears when rows are selected, offers send message, extend deadline, export data"
+      ],
+      "interactions": [
+        "Tab navigation with underline indicator that slides between tabs",
+        "Class cards flip on hover to show quick stats on back",
+        "Student rows expandable to show inline progress summary",
+        "Invite link has copy button with success animation and auto-expiry countdown",
+        "Assignment builder uses step-by-step wizard with progress indicator",
+        "Charts are interactive with hover tooltips and click-to-drill-down",
+        "Bulk selection with checkbox animation, toolbar slides up from bottom",
+        "Real-time updates: student activity indicators pulse when active",
+        "Export actions show progress modal with animated spinner"
+      ]
+    }
+  ],
+  "accessibility_notes": [
+    "All interactive elements have minimum 44x44px touch targets",
+    "Color is never the only indicator of state (icons, labels, patterns used)",
+    "WCAG AAA contrast ratios maintained: 7:1 for normal text, 4.5:1 for large text",
+    "All forms have visible focus indicators with 3px accent-colored outline",
+    "Keyboard navigation fully supported: Tab order logical, Escape closes modals, Arrow keys navigate lists",
+    "Screen reader announcements for dynamic content updates (scan progress, new findings)",
+    "All images and icons have descriptive alt text or aria-labels",
+    "Skip navigation link for keyboard users to bypass repeated content",
+    "Reduced motion mode respects prefers-reduced-motion, disables animations",
+    "Error messages are descriptive and associated with form fields via aria-describedby",
+    "Loading states have aria-live regions to announce completion",
+    "Tables have proper header associations and caption elements",
+    "Modal dialogs trap focus and return focus on close",
+    "Time-based content (session timers) can be extended or disabled",
+    "Monospace code content maintains readability at 200% zoom"
+  ]
+}
